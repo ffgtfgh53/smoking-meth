@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'],['\\(', '\\)']]}
+    };
+  </script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <aside class="sidebar">
+    <div class="title">Notes</div>
+
+    <a href="/">Home</a>
+    <a href="/10-sequences-and-series/">10 Sequences and Series</a>
+  </aside>
+
+  <main class="content">
+    {{ content }}
+  </main>
+
+</body>
+</html>
