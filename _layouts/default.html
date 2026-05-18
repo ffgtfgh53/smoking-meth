@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/styles/style.css">
 </head>
 
 <body>
@@ -15,10 +15,13 @@
 
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <aside class="sidebar">
-    <div class="title">Notes</div>
+    <div class="title">Crystal Meth</div>
 
-    <a href="/">Home</a>
-    <a href="/10-sequences-and-series/">10 Sequences and Series</a>
+    <!-- <a href="/">Home</a>
+    <a href="/10-sequences-and-series/">10 Sequences and Series</a> -->
+    {% for page in site.data.nav %}
+      <a href="{{page.link}}">{{page.name}}</a>
+    {% endfor %}
   </aside>
 
   <main class="content">
