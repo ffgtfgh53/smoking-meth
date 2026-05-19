@@ -55,7 +55,7 @@ approaches infinity as r approaches infinity.
 <div class=indented markdown=1>
 
 A *convergent sequence* is when the terms of an infinite sequence
-$$\\brace u_r \rbrace, r \in \mathbb{Z}^+$$
+$$\lbrace u_r \rbrace, r \in \mathbb{Z}^+$$
 approaches a real number $L$ as r approaches infinity.
 
 </div>
