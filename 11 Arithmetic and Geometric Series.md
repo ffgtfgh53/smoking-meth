@@ -6,9 +6,9 @@ permalink: /11-arithmetic-and-geometric-series/
 # 11 Arithmetic and Geometric Series
 
 # Content
-1. [Arithmetic Progression and Arithmetic Series](#arithmetic-progression-and-arithmetic-series)
+1. [Arithmetic Progression and Arithmetic Series](#1-arithmetic-progression-and-arithmetic-series)
 
-    1. [Arithmetic Progression](#arithmetic-progression)
+    1. [Arithmetic Progression](#11-arithmetic-progression)
 
     2. [Arithmetic Series](#12-arithmetic-series)
 
