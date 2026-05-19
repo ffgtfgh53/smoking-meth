@@ -210,7 +210,7 @@ $$\alpha = \tan^{-1}{\left( \frac{|y|}{|x|} \right)}$$
 
 Addition and subtraction of complex numbers correspond to the parallelogram law of vector addition and subtraction.
 
->**Result**
+>**Result: Geometrical Effect of Addition**
 >
 > Let $z_1$ and $z_2$ be two distinct complex numbers. The points $P_1$,$P_2$ and $P_3$, representing $z_1$, $z_2$ and $z_1+ z_2$ respectively in the Argand diagram, form a parallelogram $OP_1P_3P_2$.
 >
@@ -220,4 +220,52 @@ Addition and subtraction of complex numbers correspond to the parallelogram law 
 > $$\overrightarrow{OP_3} = \overrightarrow{OP_1} + \overrightarrow{OP_2}$$
 
 <details>
-<summary>Proof</summary>
+<summary markdown=1> **Proof**</summary> 
+
+$$
+ \begin{align*}
+\\
+z_1 + z_2 &= (x_1 + iy_1) + (x_2+iy_2) \\
+&= (x_1 + x_2) + (y_1 + y_2)i
+ \\
+ \\ 
+ \therefore \overrightarrow{OP_3} &= \begin{pmatrix} x_1+x_2 \\ y_1 +y_2 \end{pmatrix} \\ &= \begin{pmatrix}x_1 \\ y_1\end{pmatrix} + \begin{pmatrix}x_2 \\ y_2 \end{pmatrix} \\ &= \overrightarrow{OP_1} + \overrightarrow{OP_2}
+\end{align*}$$
+
+</details>
+
+<br>
+
+> **Result: Geometrical Effect of Subtraction**
+> 
+> Let $z_1$ and $z_2$ be two distinct complex numbers. The points $P_1$,$P_2$ and $P_3$, representing $z_1$, $z_2$ and $z_1 - z_2$ respectively in the Argand diagram, form a parallelogram $OP_1P_3P_2$.
+> 
+> #TODO: DIAGRAM
+> 
+> By the parallelogrm law of vector addition,
+> 
+> $$\begin{align*}\overrightarrow{OP_3} &= \overrightarrow{OP_2} - \overrightarrow{OP_1} \\ &= \overrightarrow{P_1P_2}\end{align*}$$
+
+<details>
+<summary markdown=1> **Proof**</summary> 
+
+$$
+ \begin{align*}
+\\
+z_2 - z_1 &= (x_2 + iy_2) - (x_1+iy_1) \\
+&= (x_2 - x_1) + (y_2 - y_1)i
+ \\
+ \\ 
+ \therefore \overrightarrow{OP_3} &= \begin{pmatrix} x_2-x_1 \\ y_2 -y_1 \end{pmatrix} \\ &= \begin{pmatrix}x_2 \\ y_2\end{pmatrix} - \begin{pmatrix}x_1 \\ y_1 \end{pmatrix} \\ &= \overrightarrow{OP_2} + \overrightarrow{OP_1} \\ &= \overrightarrow{P_1P_2}
+\end{align*}$$
+
+> **Deductions**
+>
+> - $\begin{array}{l c}P_1P_2 &=& \left| \overrightarrow{p_1P_2} \right| \\ &=& \left| z_2 - z_1 \right|\end{array}$
+>
+> - $arg(z_2 - z_1)$ is the angle between $P_1P_2$ and the **positive real direction**, equivalently, the positive x-axis.
+
+
+</details>
+
+<br>
