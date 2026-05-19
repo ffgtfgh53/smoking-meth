@@ -54,6 +54,8 @@ S_n &= a + (a+d) + (a+2d)+(a+3d)+\ldots+\left[ a+(n-1)d \right] \\
 $$
 where $a$ is the first term and $d$ is the common difference.
 
+</div>
+
 >**General Formula: Arithmetic Series**
 >
 > $S_n$ can be found by the following formula:
