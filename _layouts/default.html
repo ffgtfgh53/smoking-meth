@@ -14,19 +14,29 @@
   </script>
 
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <aside class="sidebar">
+  
+  <aside class="sidebar" id="sidebar">
     <div class="title">Crystal Meth</div>
 
-    <!-- <a href="/">Home</a>
-    <a href="/10-sequences-and-series/">10 Sequences and Series</a> -->
     {% for page in site.data.nav %}
       <a href="{{page.link | relative_url}}">{{page.name}}</a>
     {% endfor %}
   </aside>
 
-  <main class="content">
+  <main class="content" id="content">
     {{ content }}
   </main>
+
+  <script>
+    const toggleBtn = document.getElementById("sidebar-toggle");
+    const sidebar = document.getElementById("sidebar");
+    const content = document.getElementById("content");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("closed");
+      content.classList.toggle("expanded");
+    });
+  </script>
 
 </body>
 </html>

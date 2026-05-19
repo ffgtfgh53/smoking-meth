@@ -84,3 +84,40 @@ blockquote {
   padding-left: 1rem;
   border-left: 2px solid #313244;
 }
+
+
+body {
+    margin: 0;
+}
+
+#sidebar-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+
+    transition: transform 0.3s ease;
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+.content {
+    margin-left: 250px;
+    padding: 2rem;
+
+    transition: margin-left 0.3s ease;
+}
+
+.content.expanded {
+    margin-left: 0;
+}
