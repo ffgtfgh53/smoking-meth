@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+file="$1"
+
+if [ -z "$file" ]; then
+    echo "Usage: build <file-without-extension>"
+    exit 1
+fi
+
+if [ ! -f "${file}.tex" ]; then
+    echo "Error: ${file}.tex not found"
+    exit 1
+fi
+
+latexmk -pdf "${file}.tex"
+
+inkscape "${file}.pdf" \
+  --export-type=svg \
+  --export-filename="${file}.svg" \
+  --export-background-opacity=0

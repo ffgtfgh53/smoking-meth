@@ -53,6 +53,8 @@ For any complex number $a+bi$, where $a$ and $b$ are real, $a$ is the *real* par
 
 For any complex number $z = a bi$, where $a$ and $b$ are real, its *complex conjugate*, $z^*$, is $a-bi$.
 
+<img src="{{'/assets/graphs/12N_graphical-representation-of-conjugates.svg' | relative_url}}" alt="" />
+
 </div>
 
 **Definition: Equality of Complex Numbers**
