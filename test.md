@@ -13,3 +13,4 @@ author: "Me"
 \filldraw[black] (0,0) circle (2pt) node[anchor=west]{Intersection point};
 \end{tikzpicture}
 </script>
+[background rectangle/.style={fill=white!45}, show background rectangle]
