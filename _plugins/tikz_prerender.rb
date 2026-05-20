@@ -34,16 +34,35 @@ Jekyll::Hooks.register [:pages, :documents], :post_convert do |page|
       File.write(tex_file, tex_template)
       
       # Run latex to generate DVI, then dvisvgm to generate SVG
-      # We use --no-fonts to convert glyphs to paths for maximum compatibility
       latex_cmd = "latex -interaction=nonstopmode #{hash}.tex > /dev/null 2>&1"
       Open3.capture3(latex_cmd, chdir: cache_dir)
 
+      # We handle namespacing manually to prevent collisions.
       svg_cmd = "dvisvgm --font-format=woff2 --exact --stdout --verbosity=0 #{hash}.dvi"
       stdout, stderr, status = Open3.capture3(svg_cmd, chdir: cache_dir)
       
       if status.success?
         # Extract only the <svg> element to strip XML headers and any leaking logs
         svg_only = stdout[/<svg.*<\/svg>/m]
+        if svg_only
+          # Manual namespacing: prepend hash to IDs, classes, and references to prevent collisions in <style> 
+          p = "p#{hash}-"
+          svg_only.gsub!(/id=(['"])(.*?)\1/, "id=\\1#{p}\\2\\1")
+          svg_only.gsub!(/class=(['"])(.*?)\1/, "class=\\1#{p}\\2\\1")
+          svg_only.gsub!(/href=(['"])#(.*?)\1/, "href=\\1##{p}\\2\\1")
+          svg_only.gsub!(/url\(#([^)]+)\)/, "url(##{p}\\1)")
+          
+          # Handle selectors within <style> tags more comprehensively.
+          # This targets both class and ID selectors within the style block.
+          svg_only.gsub!(/(<style[^>]*>.*?<\/style>)/m) do |style_block|
+            # Apply prefixing to class and ID selectors within the style block
+            # Ensure the selector name starts with a letter or underscore (not decimal no. like 6.7).
+            style_block.gsub!(/([.#])([a-zA-Z_][a-zA-Z0-9_-]*)(?=[^a-zA-Z0-9_-]|\{)/) do |match|
+              "#{$1}#{p}#{$2}"
+            end
+            style_block # Return the modified style block
+          end
+        end
         File.write(svg_path, svg_only || "<!-- SVG parsing failed -->")
       else
         Jekyll.logger.error "TikZ Error:", stderr

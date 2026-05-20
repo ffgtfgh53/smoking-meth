@@ -41,6 +41,7 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Install TeX dependencies
+        # Needed to build SVGs if not present in .tikz_cache, can remove if all images guaranteed to be there
         run: |
           sudo apt-get update
           sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-pictures dvisvgm
