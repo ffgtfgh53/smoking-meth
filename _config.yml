@@ -3,9 +3,3 @@ theme: minima
 baseurl: "/smoking-meth"
 url: "https://garethlearnscoding.github.io"
 
-plugins:
-- jekyll-tikz
-
-tikz:
-  path:assets/tikz
-  format:svg
