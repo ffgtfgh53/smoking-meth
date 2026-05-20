@@ -1,2 +1,4 @@
 _site/
 .jekyll-cache/
+.tikz_cache/*
+!.tikz_cache/*.svg
