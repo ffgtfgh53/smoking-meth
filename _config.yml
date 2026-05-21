@@ -3,3 +3,6 @@ theme: minima
 baseurl: "/smoking-meth"
 url: "https://garethlearnscoding.github.io"
 
+sass:
+  quiet_deps: true
+  silence_deprecations: ["import"]
